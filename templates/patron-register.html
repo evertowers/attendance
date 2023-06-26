@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patron Registration</title>
+</head>
+<body>
+  <h1>PATRON REGISTRATION</h1>
+
+  <div class="register">
+    <form action="/patron-register-info" method="POST" enctype="multipart/form-data">
+      <label for="gName">First Name:</label>
+      <input type="text" id="gName" name="gName" required><br><br>
+      <label for="lName">Last Name:</label>
+      <input type="text" id="lName" name="lName" required><br><br>
+      <label for="mName">Middle Name:</label>
+      <input type="text" id="mName" name="mName"><br><br>
+      <label for="program">Program:</label>
+      <select name="program" id="program">
+        <option value="BSCE">Bachelor of Science in Civil Engineering (BSCE)</option>
+        <option value="BSCpE">Bachelor of Science in Computer Engineering (BSCpE)</option>
+        <option value="BSECE">Bachelor of Science in Electronics Engineering (BSECE)</option>
+        <option value="BSEE">Bachelor of Science in Electrical Engineering (BSEE)</option>
+        <option value="BSIE">Bachelor of Science in Industrial Engineering (BSIE)</option>
+        <option value="BSME">Bachelor of Science in Mechanical Engineering (BSME)</option>
+        <option value="BSRE">Bachelor of Science in Railway Engineering (BSRE)</option>
+        <option value="BSARCH">Bachelor of Science in Architecture (BSARCH)</option>
+        <option value="BSID">Bachelor of Science in Interior Design (BSID)</option>
+        <option value="BSEP">Bachelor of Science in Environmental Planning (BSEP)</option>
+      </select><br>
+
+      <label for="section">Section:</label>
+      <input type="text" id="section" name="section" required><br><br>
+
+      <label for="studentNumber">Student Number:</label>
+      <input type="text" id="studentNumber" name="studentNumber" required><br><br>
+
+      <label for="studentWebmail">Student Webmail:</label>
+      <input type="email" id="studentWebmail" name="studentWebmail" required><br><br>
+
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="text" id="phoneNumber" name="phoneNumber" required><br><br>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required><br><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+
+      <input type="file" name="image" autocomplete="off" required><br><br>
+      <input type="file" name="faceImage" autocomplete="off" required><br><br>
+
+      <button type="submit" class="btn btn-primary">Upload</button>
+
+    </form>
+  </div>
+</body>
+</html>

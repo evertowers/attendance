@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-time Face Recognition</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+    <script>
+    // Connect to the SocketIO server
+    var socket = io.connect();
+
+    // Listen for the 'recognized_face' event
+    socket.on('recognized_face', function(data) {
+        var name = data.name;
+        var source = "login";
+        // Redirect to the confirmation page with the recognized face name
+        window.location.href = "/kiosk-confirm-identity/" + source + "/" + name;
+    });
+    </script>
+
+</head>
+<body>
+  <h1>LOGIN</h1>
+
+  <div class="video-container">
+
+    <img src="{{ url_for('kiosk_video_feed') }}" width="640" height="480" />
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Books</title>
+</head>
+<body>
+    <form action="{{ url_for('admin_book_search') }}" method="GET">
+        <input type="text" name="query" placeholder="Enter your search query">
+        <input type="submit" value="Search">
+    </form>
+    <h1>All Books</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Item Call Number</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Status</th>
+                <th>Tags</th>
+                <th>NFC Code</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in book %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.isbn }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.item_call_number }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.publisher }}</td>
+                <td>{{ book.status }}</td>
+                <td>{{ book.tags }}</td>
+                <td>{{ book.nfc_code }}</td>
+                <td>{{ book.description }}</td>
+                <td>
+                    <a href="/admin-edit-book/{{ book.id }}">Edit</a> |
+                    <a href="/admin-delete-book/{{ book.id }}" >Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

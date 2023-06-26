@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dropdown Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Hide all div elements initially
+            $('.dropdown-content').hide();
+
+            // Event handler for the first dropdown
+            $('#dropdown1').change(function() {
+                // Hide all div elements
+                $('.dropdown-content').hide();
+
+                // Show the corresponding div based on the selected option
+                var selectedOption = $(this).val();
+                $('#' + selectedOption).show();
+            });
+
+            // Event handler for the second dropdown
+            $('#dropdown2').change(function() {
+                // Hide all div elements
+                $('.dropdown-content').hide();
+
+                // Show the corresponding div based on the selected option
+                var selectedOption = $(this).val();
+                $('#' + selectedOption).show();
+            });
+
+            // Event handler for the third dropdown
+            $('#dropdown3').change(function() {
+                // Hide all div elements
+                $('.dropdown-content').hide();
+
+                // Show the corresponding div based on the selected option
+                var selectedOption = $(this).val();
+                $('#' + selectedOption).show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Dropdown Demo</h1>
+
+    <form>
+        <label for="dropdown1">All:</label>
+        <select id="dropdown1">
+            <option value="div1">All</option>
+            <option value="div2">Students</option>
+            <option value="div3">Faculties</option>
+        </select>
+
+    </form>
+
+    <div id="div1" class="dropdown-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Webmail</th>
+                    <th>Last Name</th>
+                    <th>Given Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in user %}
+                <tr>
+                    <td>{{ user.webmail }}</td>
+                    <td>{{ user.lName }}</td>
+                    <td>{{ user.gName }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+    <div id="div2" class="dropdown-content">
+        Div 2
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Number</th>
+                    <th>Last Name</th>
+                    <th>Given Name</th>
+                    <th>Program</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in student %}
+                <tr>
+                    <td>{{ student.studentNumber }}</td>
+                    <td>{{ student.lName }}</td>
+                    <td>{{ student.gName }}</td>
+                    <td>{{ student.program }}</td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div id="div3" class="dropdown-content">
+        Div 3
+        <table>
+            <thead>
+                <tr>
+                    <th>Faculty Webmail</th>
+                    <th>Last Name</th>
+                    <th>Given Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for faculty in faculty %}
+                <tr>
+                    <td>{{ faculty.webmail }}</td>
+                    <td>{{ faculty.lName }}</td>
+                    <td>{{ faculty.gName }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
